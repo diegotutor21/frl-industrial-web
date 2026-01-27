@@ -59,11 +59,7 @@ img {
 ======================================== */
 .navbar {
   padding: 12px 0;
-  transition: transform 0.3s ease-in-out;
-}
-
-.navbar-hidden {
-  transform: translateY(-100%);
+  transition: all 0.3s ease;
 }
 
 .navbar-brand img {
@@ -221,55 +217,26 @@ img {
 }
 
 /* ========================================
-   INFO CARDS SECTION
+   INFO BANNERS SECTION
 ======================================== */
-.info-cards-section {
-  margin-top: -40px;
-  position: relative;
-  z-index: 10;
+
+.bg-verde-frl {
+  background-color: var(--verde-frl) !important;
 }
 
-.info-card {
-  background: var(--blanco);
-  padding: 35px 30px;
-  border-radius: 12px;
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
-  height: 100%;
+.bg-gris-frl {
+  background-color: var(--gris-frl) !important;
+}
+
+/* Efecto hover en iconos */
+.info-banners-section i {
   transition: all 0.3s ease;
 }
 
-.info-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 12px 40px rgba(136, 197, 65, 0.15);
-}
-
-.info-icon {
-  width: 60px;
-  height: 60px;
-  background: linear-gradient(135deg, var(--verde-frl), var(--verde-hover));
-  border-radius: 12px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 20px;
-}
-
-.info-icon i {
-  font-size: 28px;
-  color: var(--blanco);
-}
-
-.info-card h3 {
-  font-size: 1.4rem;
-  margin-bottom: 15px;
-  color: var(--gris-frl);
-}
-
-.info-card p {
-  color: #6c757d;
-  font-size: 15px;
-  margin: 0;
-  line-height: 1.7;
+.info-banners-section .bg-verde-frl:hover i,
+.info-banners-section .bg-gris-frl:hover i {
+  transform: scale(1.1);
+  opacity: 0.35 !important;
 }
 
 /* ========================================
@@ -314,8 +281,7 @@ img {
 .servicio-img-wrapper {
   overflow: hidden;
   border-radius: 12px;
-  width: 100%;
-  aspect-ratio: 1/1;
+  height: 400px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -325,7 +291,7 @@ img {
 .servicio-img-wrapper img {
   width: 100%;
   height: 100%;
-  object-fit: contain;
+  object-fit: cover;
   object-position: center;
   transition: transform 0.5s ease;
 }
@@ -333,10 +299,6 @@ img {
 /* Contenido del servicio */
 .servicio-content {
   padding: 20px 0;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
 }
 
 .servicio-title {
@@ -355,18 +317,6 @@ img {
 .servicios-carousel-wrapper {
   position: relative;
   padding: 0 60px;
-}
-
-#serviciosCarousel {
-  min-height: 450px;
-}
-
-#serviciosCarrusel .carousel-inner {
-  min-height: 450px;
-}
-
-#serviciosCarrusel .carousel-item {
-  min-height: 450px;
 }
 
 .carousel-control-external {
@@ -756,22 +706,6 @@ img {
 
 /* Mobile */
 @media (max-width: 768px) {
-  #serviciosCarousel {
-    min-height: 560px;
-  }
-
-  #serviciosCarousel .carousel-inner {
-    min-height: 560px;
-  }
-
-  #serviciosCarousel .carousel-item {
-    min-height: 560px;
-  }
-
-  .servicio-img-wrapper {
-    margin-bottom: 25px;
-  }
-
   .hero-title {
     font-size: 2.2rem;
   }
@@ -784,10 +718,6 @@ img {
     padding: 100px 0 50px 0;
   }
 
-  .info-cards-section {
-    margin-top: 0;
-  }
-
   .section-title {
     font-size: 1.75rem;
   }
@@ -797,22 +727,13 @@ img {
   }
 
   .servicio-content {
-    padding: 0 20px;
-  }
-
-  .servicio-title {
-    font-size: 1.35rem;
-    margin-bottom: 12px;
-  }
-
-  .servicio-text {
-    font-size: 0.93rem;
-    line-height: 1.6;
+    padding: 30px 30px 30px 30px;
+    margin-bottom: 30px;
   }
 
   .servicio-img-wrapper {
-    height: 280px;
-    margin-bottom: 25px;
+    height: 300px;
+    margin-bottom: 20px;
   }
 
   .servicios-carousel-wrapper {
@@ -825,16 +746,19 @@ img {
     height: 40px;
     background: rgba(136, 197, 65, 0.7);
     backdrop-filter: blur(5px);
-    font-size: 22px;
-    top: 180px;
+    font-size: 20px;
   }
 
   .carousel-control-prev-external {
-    left: 15px;
+    left: 10px;
   }
 
   .carousel-control-next-external {
-    right: 15px;
+    right: 10px;
+  }
+
+  .carousel-control-external:hover {
+    background: rgba(136, 197, 65, 0.9);
   }
 
   .productos-cta {
@@ -875,18 +799,6 @@ img {
 }
 
 @media (max-width: 576px) {
-  #serviciosCarousel {
-    min-height: 520px;
-  }
-
-  #serviciosCarousel .carousel-inner {
-    min-height: 520px;
-  }
-
-  #serviciosCarousel .carousel-item {
-    min-height: 520px;
-  }
-
   .hero-badge {
     font-size: 12px;
     padding: 6px 18px;
@@ -914,21 +826,10 @@ img {
   }
 
   .servicio-img-wrapper {
-    height: 240px;
-  }
-
-  .carousel-control-external {
-    top: 160px;
-    width: 40px;
-    height: 40px;
-    font-size: 20px;
+    height: 250px;
   }
 
   .servicio-title {
-    font-size: 1.2rem;
-  }
-
-  .servicio-text {
-    font-size: 0.9rem;
+    font-size: 1.25rem;
   }
 }
