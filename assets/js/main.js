@@ -1,19 +1,31 @@
 // ========================================
-// BOTONES FLOTANTES - Mostrar/Ocultar al hacer scroll
+// NAVBAR - Ocultar al bajar, mostrar al subir
 // ========================================
 
-const btnWhatsapp = document.getElementById("btnWhatsapp");
-const btnScrollTop = document.getElementById("btnScrollTop");
-
+const navbar = document.querySelector(".navbar");
 let lastScrollTop = 0;
-let scrollThreshold = 300; // Píxeles antes de mostrar los botones
+let scrollThreshold = 100; // Píxeles antes de activar el efecto
 
 window.addEventListener("scroll", () => {
   const currentScroll =
     window.pageYOffset || document.documentElement.scrollTop;
 
-  // Mostrar botones solo cuando se hace scroll hacia abajo más de 300px
+  // Ocultar/mostrar navbar
   if (currentScroll > scrollThreshold) {
+    if (currentScroll > lastScrollTop) {
+      // Scrolling hacia abajo - ocultar navbar
+      navbar.classList.add("navbar-hidden");
+    } else {
+      // Scrolling hacia arriba - mostrar navbar
+      navbar.classList.remove("navbar-hidden");
+    }
+  } else {
+    // En la parte superior - siempre mostrar
+    navbar.classList.remove("navbar-hidden");
+  }
+
+  // Mostrar/ocultar botones flotantes
+  if (currentScroll > 300) {
     btnWhatsapp.classList.add("show");
     btnScrollTop.classList.add("show");
   } else {
@@ -23,6 +35,13 @@ window.addEventListener("scroll", () => {
 
   lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
 });
+
+// ========================================
+// BOTONES FLOTANTES - Referencias
+// ========================================
+
+const btnWhatsapp = document.getElementById("btnWhatsapp");
+const btnScrollTop = document.getElementById("btnScrollTop");
 
 // ========================================
 // SCROLL TO TOP - Funcionalidad

@@ -59,7 +59,11 @@ img {
 ======================================== */
 .navbar {
   padding: 12px 0;
-  transition: all 0.3s ease;
+  transition: transform 0.3s ease-in-out;
+}
+
+.navbar-hidden {
+  transform: translateY(-100%);
 }
 
 .navbar-brand img {
@@ -305,20 +309,34 @@ img {
 /* ========================================
    SERVICIOS
 ======================================== */
+
+/* Contenedor de imagen con altura fija */
 .servicio-img-wrapper {
   overflow: hidden;
   border-radius: 12px;
+  height: 350px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f8f9fa;
 }
 
 .servicio-img-wrapper img {
   width: 100%;
-  height: auto;
+  height: 100%;
   object-fit: cover;
+  object-position: center;
   transition: transform 0.5s ease;
 }
 
+/* Contenido del servicio */
 .servicio-content {
   padding: 20px 0;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .servicio-title {
@@ -337,6 +355,18 @@ img {
 .servicios-carousel-wrapper {
   position: relative;
   padding: 0 60px;
+}
+
+#serviciosCarousel {
+  min-height: 450px;
+}
+
+#serviciosCarrusel .carousel-inner {
+  min-height: 450px;
+}
+
+#serviciosCarrusel .carousel-item {
+  min-height: 450px;
 }
 
 .carousel-control-external {
@@ -726,6 +756,18 @@ img {
 
 /* Mobile */
 @media (max-width: 768px) {
+  #serviciosCarousel {
+    min-height: 560px;
+  }
+
+  #serviciosCarousel .carousel-inner {
+    min-height: 560px;
+  }
+
+  #serviciosCarousel .carousel-item {
+    min-height: 560px;
+  }
+
   .hero-title {
     font-size: 2.2rem;
   }
@@ -751,8 +793,46 @@ img {
   }
 
   .servicio-content {
-    padding: 30px 0 0 0;
+    padding: 0 20px;
   }
+
+  .servicio-title {
+    font-size: 1.35rem;
+    margin-bottom: 12px;
+  }
+
+  .servicio-text {
+    font-size: 0.93rem;
+    line-height: 1.6;
+  }
+
+  .servicio-img-wrapper {
+    height: 280px;
+    margin-bottom: 25px;
+  }
+
+  .servicios-carousel-wrapper {
+    padding: 0;
+  }
+
+  /* Botones transparentes y más pequeños */
+  .carousel-control-external {
+    width: 40px;
+    height: 40px;
+    background: rgba(136, 197, 65, 0.7);
+    backdrop-filter: blur(5px);
+    font-size: 22px;
+    top: 180px;
+  }
+
+  .carousel-control-prev-external {
+    left: 15px;
+  }
+
+  .carousel-control-next-external {
+    right: 15px;
+  }
+
 
   .productos-cta {
     padding: 35px 25px;
@@ -792,6 +872,18 @@ img {
 }
 
 @media (max-width: 576px) {
+  #serviciosCarousel {
+    min-height: 520px;
+  }
+
+  #serviciosCarousel .carousel-inner {
+    min-height: 520px;
+  }
+
+  #serviciosCarousel .carousel-item {
+    min-height: 520px;
+  }
+
   .hero-badge {
     font-size: 12px;
     padding: 6px 18px;
@@ -816,5 +908,24 @@ img {
 
   .footer-links {
     gap: 15px;
+  }
+
+  .servicio-img-wrapper {
+    height: 240px;
+  }
+
+  .carousel-control-external {
+    top: 160px;
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+  }
+
+  .servicio-title {
+    font-size: 1.2rem;
+  }
+
+  .servicio-text {
+    font-size: 0.9rem;
   }
 }
