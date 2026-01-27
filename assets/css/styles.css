@@ -314,8 +314,8 @@ img {
 .servicio-img-wrapper {
   overflow: hidden;
   border-radius: 12px;
-  height: 350px;
   width: 100%;
+  aspect-ratio: 1/1;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -769,7 +769,6 @@ img {
   }
 
   .servicio-img-wrapper {
-    height: 280px; /* ← Altura en tablets/móviles */
     margin-bottom: 25px;
   }
 
@@ -886,10 +885,6 @@ img {
 
   #serviciosCarousel .carousel-item {
     min-height: 520px;
-  }
-
-  .servicio-img-wrapper {
-    height: 240px; /* ← Altura en móviles pequeños */
   }
 
   .hero-badge {
