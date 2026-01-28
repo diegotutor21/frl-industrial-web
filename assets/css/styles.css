@@ -57,25 +57,29 @@ img {
 /* ========================================
    NAVBAR 
 ======================================== */
-
-/* Navbar con transición suave */
 .navbar {
   padding: 12px 0;
   transition: transform 0.3s ease-in-out;
 }
 
-/* Clase para ocultar el navbar al bajar */
 .navbar-hidden {
   transform: translateY(-100%);
 }
 
-/* Logo con transición */
 .navbar-brand img {
   transition: all 0.3s ease;
   width: 90px;
 }
 
-/* Estilos de los links */
+.navbar-toggler {
+  position: relative;
+  z-index: 1050;
+}
+
+.navbar-toggler:focus {
+  box-shadow: none;
+}
+
 .navbar-light .navbar-nav .nav-link {
   color: var(--gris-frl);
   font-weight: 500;
@@ -90,7 +94,6 @@ img {
   color: var(--verde-frl);
 }
 
-/* Underline animado en desktop */
 .navbar-light .navbar-nav .nav-link::after {
   content: "";
   position: absolute;
@@ -108,10 +111,6 @@ img {
   transform: scaleX(1);
 }
 
-.navbar-toggler:focus {
-  box-shadow: none;
-}
-
 /* ========================================
    HERO SECTION 
 ======================================== */
@@ -124,7 +123,6 @@ img {
   overflow: hidden;
 }
 
-/* Carrusel de fondo */
 #heroCarousel {
   position: absolute;
   top: 0;
@@ -146,7 +144,6 @@ img {
   object-position: center;
 }
 
-/* Overlay oscuro para legibilidad */
 .hero-overlay {
   position: absolute;
   top: 0;
@@ -162,7 +159,6 @@ img {
   z-index: 2;
 }
 
-/* Contenido del hero */
 .hero-content {
   position: relative;
   z-index: 3;
@@ -229,7 +225,6 @@ img {
 /* ========================================
    INFO BANNERS SECTION
 ======================================== */
-
 .bg-verde-frl {
   background-color: var(--verde-frl) !important;
 }
@@ -238,7 +233,6 @@ img {
   background-color: var(--gris-frl) !important;
 }
 
-/* Efecto hover en iconos */
 .info-banners-section i {
   transition: all 0.3s ease;
 }
@@ -286,8 +280,6 @@ img {
 /* ========================================
    SERVICIOS GRID - ANIMACIÓN Y ESTILOS
 ======================================== */
-
-/* Animación de entrada con barrido suave */
 .servicio-item {
   opacity: 0;
   transform: translateY(30px);
@@ -299,7 +291,6 @@ img {
   transform: translateY(0);
 }
 
-/* Delay escalonado para efecto cascada */
 .servicio-item:nth-child(1).animate {
   transition-delay: 0.1s;
 }
@@ -316,7 +307,6 @@ img {
   transition-delay: 0.4s;
 }
 
-/* Hover en las cards */
 .servicio-item .card {
   transition: all 0.3s ease;
 }
@@ -325,14 +315,12 @@ img {
   box-shadow: 0 12px 30px rgba(136, 197, 65, 0.2) !important;
 }
 
-/* Asegurar que las imágenes cubran el espacio */
 .servicio-item .ratio img {
   object-fit: cover;
   object-position: center;
   transition: transform 0.3s ease;
 }
 
-/* Títulos con color FRL al hover */
 .servicio-item .card:hover .card-title {
   color: var(--verde-frl);
   transition: color 0.3s ease;
@@ -352,8 +340,8 @@ img {
 }
 
 .producto-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 8px 25px rgba(136, 197, 65, 0.2);
+  box-shadow: 0 12px 30px rgba(136, 197, 65, 0.2) !important;
+  transform: translateY(-5px);
 }
 
 .producto-img {
@@ -424,48 +412,14 @@ img {
   opacity: 0.9;
 }
 
-/* ========================================
-   MARCAS
-======================================== */
-.marca-card {
-  background: var(--blanco);
-  padding: 30px 20px;
-  border-radius: 12px;
-  text-align: center;
-  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.06);
-  transition: all 0.3s ease;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-.marca-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 20px rgba(136, 197, 65, 0.15);
-}
-
-.marca-card img {
-  max-height: 70px;
-  object-fit: contain;
-  margin-bottom: 15px;
-}
-
-.marca-name {
-  font-size: 13px;
-  font-weight: 600;
-  color: var(--gris-frl);
-  margin: 0;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
+.producto-card:hover .producto-brand {
+  color: var(--verde-frl);
+  transition: color 0.3s ease;
 }
 
 /* ========================================
-   MARCAS CARRUSEL - ESTILOS MÍNIMOS
+   MARCAS CARRUSEL 
 ======================================== */
-
-/* Personalizar indicadores del carrusel de marcas */
 #marcasCarousel .carousel-indicators {
   position: relative;
   margin-top: 2rem;
@@ -488,25 +442,28 @@ img {
   background-color: var(--verde-frl);
 }
 
-/* Transición suave entre slides */
 #marcasCarousel .carousel-item {
   transition: transform 0.8s ease-in-out;
 }
 
-/* Asegurar que las imágenes no se deformen */
 .marca-card-carousel .ratio img {
   object-fit: contain;
   object-position: center;
 }
 
-/* Hover en las cards de marca */
 .marca-card-carousel {
   transition: all 0.3s ease;
+  opacity: 0.8;
 }
 
 .marca-card-carousel:hover {
-  transform: translateY(-5px);
   box-shadow: 0 8px 20px rgba(136, 197, 65, 0.2) !important;
+  opacity: 1;
+}
+
+.marca-card-carousel:hover .card-body p {
+  color: var(--verde-frl);
+  transition: color 0.3s ease;
 }
 
 /* ========================================
@@ -695,7 +652,6 @@ img {
 /* ========================================
    RESPONSIVE 
 ======================================== */
-
 /* Tablets */
 @media (max-width: 991px) {
   .hero-title {
@@ -718,8 +674,14 @@ img {
 
 /* Mobile */
 @media (max-width: 768px) {
+  .navbar .container {
+    position: relative;
+  }
+
   .navbar-brand {
-    order: 0;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
   }
 
   .navbar-toggler {
@@ -727,6 +689,13 @@ img {
     right: 15px;
     top: 50%;
     transform: translateY(-50%);
+    z-index: 1050;
+  }
+
+  .navbar-collapse {
+    position: relative;
+    z-index: 1040;
+    margin-top: 60px;
   }
 
   .navbar-nav {
@@ -788,11 +757,23 @@ img {
 }
 
 @media (max-width: 576px) {
+  .navbar-brand {
+    position: relative;
+    left: auto;
+    transform: none;
+  }
+
   .navbar-toggler {
     position: relative;
     right: auto;
     top: auto;
     transform: none;
+    z-index: auto;
+  }
+
+  .navbar-collapse {
+    margin-top: 0;
+    z-index: auto;
   }
 
   .hero-badge {
