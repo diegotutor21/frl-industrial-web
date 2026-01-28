@@ -55,18 +55,27 @@ img {
 }
 
 /* ========================================
-   NAVBAR
+   NAVBAR 
 ======================================== */
+
+/* Navbar con transición suave */
 .navbar {
   padding: 12px 0;
-  transition: all 0.3s ease;
+  transition: transform 0.3s ease-in-out;
 }
 
+/* Clase para ocultar el navbar al bajar */
+.navbar-hidden {
+  transform: translateY(-100%);
+}
+
+/* Logo con transición */
 .navbar-brand img {
   transition: all 0.3s ease;
   width: 90px;
 }
 
+/* Estilos de los links */
 .navbar-light .navbar-nav .nav-link {
   color: var(--gris-frl);
   font-weight: 500;
@@ -81,6 +90,7 @@ img {
   color: var(--verde-frl);
 }
 
+/* Underline animado en desktop */
 .navbar-light .navbar-nav .nav-link::after {
   content: "";
   position: absolute;
@@ -274,100 +284,58 @@ img {
 }
 
 /* ========================================
-   SERVICIOS
+   SERVICIOS GRID - ANIMACIÓN Y ESTILOS
 ======================================== */
 
-/* Contenedor de imagen con altura fija */
-.servicio-img-wrapper {
-  overflow: hidden;
-  border-radius: 12px;
-  height: 400px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: #f8f9fa;
+/* Animación de entrada con barrido suave */
+.servicio-item {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.6s ease;
 }
 
-.servicio-img-wrapper img {
-  width: 100%;
-  height: 100%;
+.servicio-item.animate {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Delay escalonado para efecto cascada */
+.servicio-item:nth-child(1).animate {
+  transition-delay: 0.1s;
+}
+
+.servicio-item:nth-child(2).animate {
+  transition-delay: 0.2s;
+}
+
+.servicio-item:nth-child(3).animate {
+  transition-delay: 0.3s;
+}
+
+.servicio-item:nth-child(4).animate {
+  transition-delay: 0.4s;
+}
+
+/* Hover en las cards */
+.servicio-item .card {
+  transition: all 0.3s ease;
+}
+
+.servicio-item .card:hover {
+  box-shadow: 0 12px 30px rgba(136, 197, 65, 0.2) !important;
+}
+
+/* Asegurar que las imágenes cubran el espacio */
+.servicio-item .ratio img {
   object-fit: cover;
   object-position: center;
-  transition: transform 0.5s ease;
+  transition: transform 0.3s ease;
 }
 
-/* Contenido del servicio */
-.servicio-content {
-  padding: 20px 0;
-}
-
-.servicio-title {
-  font-size: 1.75rem;
-  color: var(--gris-frl);
-  margin-bottom: 15px;
-}
-
-.servicio-text {
-  font-size: 1rem;
-  color: #6c757d;
-  line-height: 1.7;
-}
-
-/* Controles del carrusel - Externos */
-.servicios-carousel-wrapper {
-  position: relative;
-  padding: 0 60px;
-}
-
-.carousel-control-external {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 50px;
-  height: 50px;
-  background: var(--verde-frl);
-  border: none;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--blanco);
-  font-size: 24px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  z-index: 10;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
-}
-
-.carousel-control-prev-external {
-  left: 0;
-}
-
-.carousel-control-next-external {
-  right: 0;
-}
-
-.carousel-control-external:hover {
-  background: var(--verde-hover);
-  transform: translateY(-50%) scale(1.1);
-  box-shadow: 0 6px 20px rgba(136, 197, 65, 0.3);
-}
-
-.carousel-indicators {
-  margin-bottom: -40px;
-}
-
-.carousel-indicators button {
-  background-color: var(--verde-frl);
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  margin: 0 5px;
-  opacity: 0.5;
-}
-
-.carousel-indicators button.active {
-  opacity: 1;
+/* Títulos con color FRL al hover */
+.servicio-item .card:hover .card-title {
+  color: var(--verde-frl);
+  transition: color 0.3s ease;
 }
 
 /* ========================================
@@ -491,6 +459,54 @@ img {
   margin: 0;
   text-transform: uppercase;
   letter-spacing: 0.5px;
+}
+
+/* ========================================
+   MARCAS CARRUSEL - ESTILOS MÍNIMOS
+======================================== */
+
+/* Personalizar indicadores del carrusel de marcas */
+#marcasCarousel .carousel-indicators {
+  position: relative;
+  margin-top: 2rem;
+  margin-bottom: 0;
+  bottom: auto;
+}
+
+#marcasCarousel .carousel-indicators button {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: var(--verde-frl);
+  opacity: 0.4;
+  border: none;
+  margin: 0 6px;
+}
+
+#marcasCarousel .carousel-indicators button.active {
+  opacity: 1;
+  background-color: var(--verde-frl);
+}
+
+/* Transición suave entre slides */
+#marcasCarousel .carousel-item {
+  transition: transform 0.8s ease-in-out;
+}
+
+/* Asegurar que las imágenes no se deformen */
+.marca-card-carousel .ratio img {
+  object-fit: contain;
+  object-position: center;
+}
+
+/* Hover en las cards de marca */
+.marca-card-carousel {
+  transition: all 0.3s ease;
+}
+
+.marca-card-carousel:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(136, 197, 65, 0.2) !important;
 }
 
 /* ========================================
@@ -677,7 +693,7 @@ img {
 }
 
 /* ========================================
-   RESPONSIVE
+   RESPONSIVE 
 ======================================== */
 
 /* Tablets */
@@ -694,10 +710,6 @@ img {
     font-size: 2rem;
   }
 
-  .servicio-title {
-    font-size: 1.5rem;
-  }
-
   .footer-links {
     justify-content: center;
     margin-top: 15px;
@@ -706,6 +718,30 @@ img {
 
 /* Mobile */
 @media (max-width: 768px) {
+  .navbar-brand {
+    order: 0;
+  }
+
+  .navbar-toggler {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .navbar-nav {
+    padding: 15px 0;
+    text-align: center;
+  }
+
+  .navbar-light .navbar-nav .nav-link {
+    padding: 12px 0;
+  }
+
+  .navbar-light .navbar-nav .nav-link::after {
+    display: none;
+  }
+
   .hero-title {
     font-size: 2.2rem;
   }
@@ -724,41 +760,6 @@ img {
 
   .section-subtitle {
     font-size: 1rem;
-  }
-
-  .servicio-content {
-    padding: 30px 30px 30px 30px;
-    margin-bottom: 30px;
-  }
-
-  .servicio-img-wrapper {
-    height: 300px;
-    margin-bottom: 20px;
-  }
-
-  .servicios-carousel-wrapper {
-    padding: 0;
-  }
-
-  /* Botones transparentes y más pequeños */
-  .carousel-control-external {
-    width: 40px;
-    height: 40px;
-    background: rgba(136, 197, 65, 0.7);
-    backdrop-filter: blur(5px);
-    font-size: 20px;
-  }
-
-  .carousel-control-prev-external {
-    left: 10px;
-  }
-
-  .carousel-control-next-external {
-    right: 10px;
-  }
-
-  .carousel-control-external:hover {
-    background: rgba(136, 197, 65, 0.9);
   }
 
   .productos-cta {
@@ -784,21 +785,16 @@ img {
     bottom: 85px;
     right: 20px;
   }
-
-  .navbar-nav {
-    padding: 15px 0;
-  }
-
-  .navbar-light .navbar-nav .nav-link {
-    padding: 12px 0;
-  }
-
-  .navbar-light .navbar-nav .nav-link::after {
-    display: none;
-  }
 }
 
 @media (max-width: 576px) {
+  .navbar-toggler {
+    position: relative;
+    right: auto;
+    top: auto;
+    transform: none;
+  }
+
   .hero-badge {
     font-size: 12px;
     padding: 6px 18px;
@@ -823,13 +819,5 @@ img {
 
   .footer-links {
     gap: 15px;
-  }
-
-  .servicio-img-wrapper {
-    height: 250px;
-  }
-
-  .servicio-title {
-    font-size: 1.25rem;
   }
 }

@@ -23,19 +23,20 @@
 
 <body>
 
-    <!-- ================= HEADER / NAV ================= -->
+    <!-- ================= HEADER / NAV BAR ================= -->
     <header>
         <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top shadow-sm">
             <div class="container">
 
-                <!-- Logo -->
-                <a class="navbar-brand" href="#inicio">
+                <!-- Logo - Centrado en móvil, izquierda en desktop -->
+                <a class="navbar-brand mx-auto mx-lg-0" href="#inicio">
                     <img src="assets/img/logo/frl.png" alt="FRL Industrial" height="55">
                 </a>
 
-                <!-- Toggle -->
-                <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#mainNav">
+                <!-- Toggle - Posición absoluta en móvil para mantener logo centrado -->
+                <button class="navbar-toggler border-0 position-absolute end-0 me-3" type="button"
+                    data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false"
+                    aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
@@ -167,147 +168,103 @@
             </div>
         </section>
 
-        <!-- ===== Servicios ===== -->
+        <!-- ===== Servicios Grid 2x2 ===== -->
         <section id="servicios" class="py-5 bg-light">
             <div class="container">
 
-                <div class="section-header text-center mb-5">
-                    <h2 class="section-title">Nuestros Servicios</h2>
-                    <p class="section-subtitle">Soluciones integrales para la industria</p>
+                <!-- Header -->
+                <div class="text-center mb-5">
+                    <h2 class="display-5 fw-bold text-dark mb-3">Nuestros Servicios</h2>
+                    <p class="lead text-muted">Soluciones integrales para la industria</p>
                 </div>
 
-                <div class="servicios-carousel-wrapper position-relative">
+                <!-- Grid 2x2 -->
+                <div class="row g-4">
 
-                    <div id="serviciosCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="6000">
-
-                        <div class="carousel-inner">
-
-                            <div class="carousel-item active">
-                                <div class="container">
-                                    <div class="row align-items-center g-4">
-                                        <div class="col-md-5">
-                                            <div class="servicio-img-wrapper">
-                                                <img src="assets/img/servicios/venta-industrial.png"
-                                                    class="img-fluid rounded-3 shadow" alt="Venta industrial">
-                                            </div>
-                                        </div>
-                                        <div class="col-md-7">
-                                            <div class="servicio-content">
-                                                <h3 class="servicio-title">Venta de ferretería industrial</h3>
-                                                <p class="servicio-text">
-                                                    Comercializamos una amplia variedad de herramientas, equipos e
-                                                    insumos
-                                                    orientados al uso industrial y profesional. Trabajamos con marcas
-                                                    reconocidas y productos seleccionados por su calidad, rendimiento y
-                                                    durabilidad, pensados para responder a las exigencias reales del
-                                                    trabajo
-                                                    diario.
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                    <!-- Servicio 1 -->
+                    <div class="col-md-6 servicio-item">
+                        <div class="card h-100 border-0 shadow-sm">
+                            <!-- Imagen cuadrada -->
+                            <div class="ratio ratio-1x1 overflow-hidden">
+                                <img src="assets/img/servicios/venta-industrial.png"
+                                    class="card-img-top object-fit-cover" alt="Venta industrial">
                             </div>
-
-                            <div class="carousel-item">
-                                <div class="container">
-                                    <div class="row align-items-center g-4">
-                                        <div class="col-md-5">
-                                            <div class="servicio-img-wrapper">
-                                                <img src="assets/img/servicios/industria-particular.png"
-                                                    class="img-fluid rounded-3 shadow" alt="Industria y particulares">
-                                            </div>
-                                        </div>
-                                        <div class="col-md-7">
-                                            <div class="servicio-content">
-                                                <h3 class="servicio-title">Industria y consumidor final</h3>
-                                                <p class="servicio-text">
-                                                    Atendemos tanto a empresas como al consumidor final, ofreciendo
-                                                    soluciones adaptadas a cada necesidad. Brindamos una atención
-                                                    cercana y
-                                                    personalizada, acompañando a cada cliente con asesoramiento claro y
-                                                    opciones acordes al tipo de trabajo y uso requerido.
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                            <!-- Contenido -->
+                            <div class="card-body p-4">
+                                <h3 class="card-title h4 fw-bold mb-3">Venta de ferretería industrial</h3>
+                                <p class="card-text text-muted">
+                                    Comercializamos una amplia variedad de herramientas, equipos e insumos
+                                    orientados al uso industrial y profesional. Trabajamos con marcas
+                                    reconocidas y productos seleccionados por su calidad, rendimiento y
+                                    durabilidad, pensados para responder a las exigencias reales del
+                                    trabajo diario.
+                                </p>
                             </div>
-
-                            <div class="carousel-item">
-                                <div class="container">
-                                    <div class="row align-items-center g-4">
-                                        <div class="col-md-5">
-                                            <div class="servicio-img-wrapper">
-                                                <img src="assets/img/servicios/despacho.png"
-                                                    class="img-fluid rounded-3 shadow" alt="Despacho a transporte">
-                                            </div>
-                                        </div>
-                                        <div class="col-md-7">
-                                            <div class="servicio-content">
-                                                <h3 class="servicio-title">Despacho a transporte</h3>
-                                                <p class="servicio-text">
-                                                    Preparamos y despachamos pedidos a través del transporte designado
-                                                    por
-                                                    el cliente. Nos ocupamos del armado, control y embalaje de la
-                                                    mercadería, asegurando un traslado seguro y ordenado para que los
-                                                    productos lleguen en óptimas condiciones a destino.
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="carousel-item">
-                                <div class="container">
-                                    <div class="row align-items-center g-4">
-                                        <div class="col-md-5">
-                                            <div class="servicio-img-wrapper">
-                                                <img src="assets/img/servicios/asesoramiento.png"
-                                                    class="img-fluid rounded-3 shadow" alt="Asesoramiento">
-                                            </div>
-                                        </div>
-                                        <div class="col-md-7">
-                                            <div class="servicio-content">
-                                                <h3 class="servicio-title">Asesoramiento técnico</h3>
-                                                <p class="servicio-text">
-                                                    Asistimos a nuestros clientes en la elección de herramientas y
-                                                    productos
-                                                    adecuados para cada aplicación. Nuestro asesoramiento se apoya en la
-                                                    experiencia en el rubro y en el conocimiento de las distintas marcas
-                                                    y
-                                                    líneas que comercializamos.
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
                         </div>
-
-                        <!-- Indicadores -->
-                        <div class="carousel-indicators">
-                            <button type="button" data-bs-target="#serviciosCarousel" data-bs-slide-to="0"
-                                class="active"></button>
-                            <button type="button" data-bs-target="#serviciosCarousel" data-bs-slide-to="1"></button>
-                            <button type="button" data-bs-target="#serviciosCarousel" data-bs-slide-to="2"></button>
-                            <button type="button" data-bs-target="#serviciosCarousel" data-bs-slide-to="3"></button>
-                        </div>
-
                     </div>
 
-                    <!-- Controles externos -->
-                    <button class="carousel-control-external carousel-control-prev-external" type="button"
-                        data-bs-target="#serviciosCarousel" data-bs-slide="prev">
-                        <i class="bi bi-chevron-left"></i>
-                    </button>
+                    <!-- Servicio 2 -->
+                    <div class="col-md-6 servicio-item">
+                        <div class="card h-100 border-0 shadow-sm">
+                            <!-- Imagen cuadrada -->
+                            <div class="ratio ratio-1x1 overflow-hidden">
+                                <img src="assets/img/servicios/industria-particular.png"
+                                    class="card-img-top object-fit-cover" alt="Industria y particulares">
+                            </div>
+                            <!-- Contenido -->
+                            <div class="card-body p-4">
+                                <h3 class="card-title h4 fw-bold mb-3">Industria y consumidor final</h3>
+                                <p class="card-text text-muted">
+                                    Atendemos tanto a empresas como al consumidor final, ofreciendo
+                                    soluciones adaptadas a cada necesidad. Brindamos una atención
+                                    cercana y personalizada, acompañando a cada cliente con asesoramiento
+                                    claro y opciones acordes al tipo de trabajo y uso requerido.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
 
-                    <button class="carousel-control-external carousel-control-next-external" type="button"
-                        data-bs-target="#serviciosCarousel" data-bs-slide="next">
-                        <i class="bi bi-chevron-right"></i>
-                    </button>
+                    <!-- Servicio 3 -->
+                    <div class="col-md-6 servicio-item">
+                        <div class="card h-100 border-0 shadow-sm">
+                            <!-- Imagen cuadrada -->
+                            <div class="ratio ratio-1x1 overflow-hidden">
+                                <img src="assets/img/servicios/despacho.png" class="card-img-top object-fit-cover"
+                                    alt="Despacho a transporte">
+                            </div>
+                            <!-- Contenido -->
+                            <div class="card-body p-4">
+                                <h3 class="card-title h4 fw-bold mb-3">Despacho a transporte</h3>
+                                <p class="card-text text-muted">
+                                    Preparamos y despachamos pedidos a través del transporte designado
+                                    por el cliente. Nos ocupamos del armado, control y embalaje de la
+                                    mercadería, asegurando un traslado seguro y ordenado para que los
+                                    productos lleguen en óptimas condiciones a destino.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Servicio 4 -->
+                    <div class="col-md-6 servicio-item">
+                        <div class="card h-100 border-0 shadow-sm">
+                            <!-- Imagen cuadrada -->
+                            <div class="ratio ratio-1x1 overflow-hidden">
+                                <img src="assets/img/servicios/asesoramiento.png" class="card-img-top object-fit-cover"
+                                    alt="Asesoramiento">
+                            </div>
+                            <!-- Contenido -->
+                            <div class="card-body p-4">
+                                <h3 class="card-title h4 fw-bold mb-3">Asesoramiento técnico</h3>
+                                <p class="card-text text-muted">
+                                    Asistimos a nuestros clientes en la elección de herramientas y
+                                    productos adecuados para cada aplicación. Nuestro asesoramiento se
+                                    apoya en la experiencia en el rubro y en el conocimiento de las
+                                    distintas marcas y líneas que comercializamos.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
 
                 </div>
 
@@ -403,99 +360,178 @@
             </div>
         </section>
 
-        <!-- ===== Marcas ===== -->
+        <!-- ===== Marcas con Carrusel Automático ===== -->
         <section id="marcas" class="py-5 bg-light">
             <div class="container">
 
-                <div class="section-header text-center mb-5">
-                    <h2 class="section-title">Marcas con las que Trabajamos</h2>
-                    <p class="section-subtitle">Calidad respaldada por las mejores marcas del mercado</p>
+                <div class="text-center mb-5">
+                    <h2 class="display-5 fw-bold text-dark mb-3">Marcas con las que Trabajamos</h2>
+                    <p class="lead text-muted">Calidad respaldada por las mejores marcas del mercado</p>
                 </div>
 
-                <div class="row g-4">
-                    <div class="col-6 col-md-4 col-lg-3">
-                        <div class="marca-card">
-                            <img src="assets/img/marcas/stihl.png" alt="STIHL">
-                            <p class="marca-name">STIHL</p>
+                <!-- Carrusel de Marcas -->
+                <div id="marcasCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
+
+                    <div class="carousel-inner">
+
+                        <!-- Slide 1: STIHL, TAURO, LUSQTOFF, FEMA -->
+                        <div class="carousel-item active">
+                            <div class="row g-4 justify-content-center">
+                                <div class="col-6 col-md-4 col-lg-3">
+                                    <div class="marca-card-carousel card border-0 shadow-sm h-100">
+                                        <div class="ratio ratio-1x1 p-3">
+                                            <img src="assets/img/marcas/stihl.png" class="object-fit-contain"
+                                                alt="STIHL">
+                                        </div>
+                                        <div class="card-body text-center p-2">
+                                            <p class="fw-bold text-uppercase small mb-0">STIHL</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-6 col-md-4 col-lg-3">
+                                    <div class="marca-card-carousel card border-0 shadow-sm h-100">
+                                        <div class="ratio ratio-1x1 p-3">
+                                            <img src="assets/img/marcas/tauro.png" class="object-fit-contain"
+                                                alt="Tauro">
+                                        </div>
+                                        <div class="card-body text-center p-2">
+                                            <p class="fw-bold text-uppercase small mb-0">TAURO</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-6 col-md-4 col-lg-3">
+                                    <div class="marca-card-carousel card border-0 shadow-sm h-100">
+                                        <div class="ratio ratio-1x1 p-3">
+                                            <img src="assets/img/marcas/lusqtoff.png" class="object-fit-contain"
+                                                alt="Lusqtoff">
+                                        </div>
+                                        <div class="card-body text-center p-2">
+                                            <p class="fw-bold text-uppercase small mb-0">LUSQTOFF</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-6 col-md-4 col-lg-3">
+                                    <div class="marca-card-carousel card border-0 shadow-sm h-100">
+                                        <div class="ratio ratio-1x1 p-3">
+                                            <img src="assets/img/marcas/fema.png" class="object-fit-contain" alt="FEMA">
+                                        </div>
+                                        <div class="card-body text-center p-2">
+                                            <p class="fw-bold text-uppercase small mb-0">FEMA</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
+
+                        <!-- Slide 2: TOTAL, HUSQVARNA, NIWA, DE PASCALE -->
+                        <div class="carousel-item">
+                            <div class="row g-4 justify-content-center">
+                                <div class="col-6 col-md-4 col-lg-3">
+                                    <div class="marca-card-carousel card border-0 shadow-sm h-100">
+                                        <div class="ratio ratio-1x1 p-3">
+                                            <img src="assets/img/marcas/total.png" class="object-fit-contain"
+                                                alt="Total Industrial">
+                                        </div>
+                                        <div class="card-body text-center p-2">
+                                            <p class="fw-bold text-uppercase small mb-0">TOTAL INDUSTRIAL</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-6 col-md-4 col-lg-3">
+                                    <div class="marca-card-carousel card border-0 shadow-sm h-100">
+                                        <div class="ratio ratio-1x1 p-3">
+                                            <img src="assets/img/marcas/husqvarna.png" class="object-fit-contain"
+                                                alt="Husqvarna">
+                                        </div>
+                                        <div class="card-body text-center p-2">
+                                            <p class="fw-bold text-uppercase small mb-0">HUSQVARNA</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-6 col-md-4 col-lg-3">
+                                    <div class="marca-card-carousel card border-0 shadow-sm h-100">
+                                        <div class="ratio ratio-1x1 p-3">
+                                            <img src="assets/img/marcas/niwa.png" class="object-fit-contain" alt="Niwa">
+                                        </div>
+                                        <div class="card-body text-center p-2">
+                                            <p class="fw-bold text-uppercase small mb-0">NIWA</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-6 col-md-4 col-lg-3">
+                                    <div class="marca-card-carousel card border-0 shadow-sm h-100">
+                                        <div class="ratio ratio-1x1 p-3">
+                                            <img src="assets/img/marcas/DP.png" class="object-fit-contain"
+                                                alt="De Pascale">
+                                        </div>
+                                        <div class="card-body text-center p-2">
+                                            <p class="fw-bold text-uppercase small mb-0">DE PASCALE</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Slide 3: VENTO, BREMEN, BOSCH, DEWALT -->
+                        <div class="carousel-item">
+                            <div class="row g-4 justify-content-center">
+                                <div class="col-6 col-md-4 col-lg-3">
+                                    <div class="marca-card-carousel card border-0 shadow-sm h-100">
+                                        <div class="ratio ratio-1x1 p-3">
+                                            <img src="assets/img/marcas/vento.png" class="object-fit-contain"
+                                                alt="Vento">
+                                        </div>
+                                        <div class="card-body text-center p-2">
+                                            <p class="fw-bold text-uppercase small mb-0">VENTO</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-6 col-md-4 col-lg-3">
+                                    <div class="marca-card-carousel card border-0 shadow-sm h-100">
+                                        <div class="ratio ratio-1x1 p-3">
+                                            <img src="assets/img/marcas/bremen.png" class="object-fit-contain"
+                                                alt="Bremen">
+                                        </div>
+                                        <div class="card-body text-center p-2">
+                                            <p class="fw-bold text-uppercase small mb-0">BREMEN</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-6 col-md-4 col-lg-3">
+                                    <div class="marca-card-carousel card border-0 shadow-sm h-100">
+                                        <div class="ratio ratio-1x1 p-3">
+                                            <img src="assets/img/marcas/bosch.png" class="object-fit-contain"
+                                                alt="Bosch">
+                                        </div>
+                                        <div class="card-body text-center p-2">
+                                            <p class="fw-bold text-uppercase small mb-0">BOSCH</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-6 col-md-4 col-lg-3">
+                                    <div class="marca-card-carousel card border-0 shadow-sm h-100">
+                                        <div class="ratio ratio-1x1 p-3">
+                                            <img src="assets/img/marcas/dewalt.png" class="object-fit-contain"
+                                                alt="DeWalt">
+                                        </div>
+                                        <div class="card-body text-center p-2">
+                                            <p class="fw-bold text-uppercase small mb-0">DEWALT</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
                     </div>
 
-                    <div class="col-6 col-md-4 col-lg-3">
-                        <div class="marca-card">
-                            <img src="assets/img/marcas/tauro.png" alt="Soldadoras Tauro">
-                            <p class="marca-name">TAURO</p>
-                        </div>
+                    <!-- Indicadores (puntos) -->
+                    <div class="carousel-indicators position-relative mt-4 mb-0">
+                        <button type="button" data-bs-target="#marcasCarousel" data-bs-slide-to="0"
+                            class="active"></button>
+                        <button type="button" data-bs-target="#marcasCarousel" data-bs-slide-to="1"></button>
+                        <button type="button" data-bs-target="#marcasCarousel" data-bs-slide-to="2"></button>
                     </div>
 
-                    <div class="col-6 col-md-4 col-lg-3">
-                        <div class="marca-card">
-                            <img src="assets/img/marcas/lusqtoff.png" alt="Lusqtoff">
-                            <p class="marca-name">LUSQTOFF</p>
-                        </div>
-                    </div>
-
-                    <div class="col-6 col-md-4 col-lg-3">
-                        <div class="marca-card">
-                            <img src="assets/img/marcas/fema.png" alt="FEMA">
-                            <p class="marca-name">FEMA</p>
-                        </div>
-                    </div>
-
-                    <div class="col-6 col-md-4 col-lg-3">
-                        <div class="marca-card">
-                            <img src="assets/img/marcas/total.png" alt="Total Industrial">
-                            <p class="marca-name">TOTAL INDUSTRIAL</p>
-                        </div>
-                    </div>
-
-                    <div class="col-6 col-md-4 col-lg-3">
-                        <div class="marca-card">
-                            <img src="assets/img/marcas/husqvarna.png" alt="Husqvarna">
-                            <p class="marca-name">HUSQVARNA</p>
-                        </div>
-                    </div>
-
-                    <div class="col-6 col-md-4 col-lg-3">
-                        <div class="marca-card">
-                            <img src="assets/img/marcas/niwa.png" alt="Niwa">
-                            <p class="marca-name">NIWA</p>
-                        </div>
-                    </div>
-
-                    <div class="col-6 col-md-4 col-lg-3">
-                        <div class="marca-card">
-                            <img src="assets/img/marcas/depascale.png" alt="De Pascale">
-                            <p class="marca-name">DE PASCALE</p>
-                        </div>
-                    </div>
-
-                    <div class="col-6 col-md-4 col-lg-3">
-                        <div class="marca-card">
-                            <img src="assets/img/marcas/vento.png" alt="Vento Pinturas">
-                            <p class="marca-name">VENTO</p>
-                        </div>
-                    </div>
-
-                    <div class="col-6 col-md-4 col-lg-3">
-                        <div class="marca-card">
-                            <img src="assets/img/marcas/bremen.png" alt="Bremen">
-                            <p class="marca-name">BREMEN</p>
-                        </div>
-                    </div>
-
-                    <div class="col-6 col-md-4 col-lg-3">
-                        <div class="marca-card">
-                            <img src="assets/img/marcas/bosch.png" alt="Bosch">
-                            <p class="marca-name">BOSCH</p>
-                        </div>
-                    </div>
-
-                    <div class="col-6 col-md-4 col-lg-3">
-                        <div class="marca-card">
-                            <img src="assets/img/marcas/dewalt.png" alt="DeWalt">
-                            <p class="marca-name">DEWALT</p>
-                        </div>
-                    </div>
                 </div>
 
             </div>

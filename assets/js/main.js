@@ -86,3 +86,37 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
     }
   });
 });
+
+// ========================================
+// ANIMACIÓN DE SERVICIOS AL HACER SCROLL
+// ========================================
+
+// Esperar a que el DOM esté listo
+document.addEventListener('DOMContentLoaded', function() {
+    
+  // Configurar el Intersection Observer
+  const observerOptions = {
+    root: null, // viewport
+    rootMargin: '0px',
+    threshold: 0.1 // Activar cuando el 10% sea visible
+  };
+
+  // Crear el observer
+  const observer = new IntersectionObserver(function(entries) {
+    entries.forEach(entry => {
+      // Si el elemento es visible, agregar clase 'animate'
+      if (entry.isIntersecting) {
+        entry.target.classList.add('animate');
+        // Opcional: dejar de observar después de animar
+        observer.unobserve(entry.target);
+      }
+    });
+  }, observerOptions);
+
+  // Observar todos los items de servicio
+  const servicioItems = document.querySelectorAll('.servicio-item');
+  servicioItems.forEach(item => {
+    observer.observe(item);
+  });
+
+});
