@@ -55,11 +55,11 @@ img {
 }
 
 /* ========================================
-   NAVBAR 
+   NAVBAR - SIMPLIFICADO CON BOOTSTRAP
 ======================================== */
 .navbar {
-  padding: 12px 0;
-  transition: transform 0.3s ease-in-out;
+  padding: 0.75rem 0;
+  transition: all 0.3s ease;
 }
 
 .navbar-hidden {
@@ -67,24 +67,31 @@ img {
 }
 
 .navbar-brand img {
+  height: 55px;
+  max-width: 100%;
+  object-fit: contain;
   transition: all 0.3s ease;
-  width: 90px;
 }
 
 .navbar-toggler {
-  position: relative;
-  z-index: 1050;
+  padding: 0.5rem;
+  border: none;
 }
 
 .navbar-toggler:focus {
   box-shadow: none;
+  outline: none;
+}
+
+.navbar-collapse {
+  transition: all 0.35s ease-in-out;
 }
 
 .navbar-light .navbar-nav .nav-link {
   color: var(--gris-frl);
   font-weight: 500;
   font-size: 15px;
-  padding: 10px 18px;
+  padding: 0.625rem 1.125rem;
   position: relative;
   transition: color 0.3s ease;
 }
@@ -97,9 +104,9 @@ img {
 .navbar-light .navbar-nav .nav-link::after {
   content: "";
   position: absolute;
-  bottom: 5px;
-  left: 18px;
-  right: 18px;
+  bottom: 0.3125rem;
+  left: 1.125rem;
+  right: 1.125rem;
   height: 2px;
   background: var(--verde-frl);
   transform: scaleX(0);
@@ -109,6 +116,37 @@ img {
 .navbar-light .navbar-nav .nav-link:hover::after,
 .navbar-light .navbar-nav .nav-link.active::after {
   transform: scaleX(1);
+}
+
+@media (max-width: 991.98px) {
+  .navbar-brand img {
+    height: 50px;
+  }
+
+  .navbar-collapse {
+    margin-top: 1rem;
+  }
+
+  .navbar-nav {
+    padding: 0.5rem 0;
+  }
+
+  .navbar-light .navbar-nav .nav-link {
+    padding: 0.75rem 0;
+    text-align: center;
+  }
+
+  .navbar-light .navbar-nav .nav-link::after {
+    left: 50%;
+    right: auto;
+    transform: translateX(-50%) scaleX(0);
+    width: 40px;
+  }
+
+  .navbar-light .navbar-nav .nav-link:hover::after,
+  .navbar-light .navbar-nav .nav-link.active::after {
+    transform: translateX(-50%) scaleX(1);
+  }
 }
 
 /* ========================================
@@ -367,36 +405,50 @@ img {
   border-top: 2px solid var(--verde-frl);
 }
 
-.productos-cta {
+.producto-card:hover .producto-brand {
+  color: var(--verde-frl);
+  transition: color 0.3s ease;
+}
+
+/* CTA Ancho Completo */
+.productos-cta-full {
   background: linear-gradient(
     135deg,
     var(--verde-frl) 0%,
     var(--verde-hover) 100%
   );
   color: var(--blanco);
-  padding: 50px 40px;
-  border-radius: 16px;
-  text-align: center;
+  padding: 50px 0;
+  width: 100%;
+  margin: 50px 0 0 0;
 }
 
-.productos-cta h4 {
+.productos-cta-full h4 {
   color: var(--blanco);
   font-size: 2rem;
   margin-bottom: 20px;
+  text-align: center;
 }
 
-.productos-cta p {
+.productos-cta-full p {
   font-size: 1.05rem;
   line-height: 1.8;
   opacity: 0.95;
   margin-bottom: 30px;
+  text-align: center;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .cta-highlight {
   background: rgba(255, 255, 255, 0.15);
   padding: 20px 30px;
   border-radius: 12px;
-  display: inline-block;
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto;
+  display: block;
 }
 
 .cta-highlight i {
@@ -405,16 +457,12 @@ img {
 
 .cta-highlight strong {
   font-size: 1.15rem;
+  display: block;
 }
 
 .cta-highlight span {
   font-size: 0.95rem;
   opacity: 0.9;
-}
-
-.producto-card:hover .producto-brand {
-  color: var(--verde-frl);
-  transition: color 0.3s ease;
 }
 
 /* ========================================
@@ -454,6 +502,7 @@ img {
 .marca-card-carousel {
   transition: all 0.3s ease;
   opacity: 0.8;
+  padding: 1rem;
 }
 
 .marca-card-carousel:hover {
@@ -523,12 +572,6 @@ img {
 /* ========================================
    CONTACTO
 ======================================== */
-.contacto-cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 25px;
-}
-
 .contacto-card {
   background: var(--blanco);
   padding: 35px 25px;
@@ -536,6 +579,9 @@ img {
   text-align: center;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
   transition: all 0.3s ease;
+  height: 100%;
+  max-width: 280px;
+  margin: 0 auto;
 }
 
 .contacto-card:hover {
@@ -569,6 +615,7 @@ img {
   color: #6c757d;
   margin: 0;
   font-size: 1rem;
+  word-break: break-word;
 }
 
 .contacto-card a {
@@ -650,67 +697,22 @@ img {
 }
 
 /* ========================================
-   RESPONSIVE 
+   RESPONSIVE - MÍNIMOS AJUSTES
 ======================================== */
+
 /* Tablets */
-@media (max-width: 991px) {
+@media (max-width: 991.98px) {
   .hero-title {
     font-size: 2.8rem;
-  }
-
-  .hero-section {
-    padding: 120px 0 60px 0;
   }
 
   .section-title {
     font-size: 2rem;
   }
-
-  .footer-links {
-    justify-content: center;
-    margin-top: 15px;
-  }
 }
 
 /* Mobile */
-@media (max-width: 768px) {
-  .navbar .container {
-    position: relative;
-  }
-
-  .navbar-brand {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-  }
-
-  .navbar-toggler {
-    position: absolute;
-    right: 15px;
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: 1050;
-  }
-
-  .navbar-collapse {
-    position: relative;
-    z-index: 1040;
-    margin-top: 60px;
-  }
-
-  .navbar-nav {
-    padding: 15px 0;
-    text-align: center;
-  }
-
-  .navbar-light .navbar-nav .nav-link {
-    padding: 12px 0;
-  }
-
-  .navbar-light .navbar-nav .nav-link::after {
-    display: none;
-  }
-
+@media (max-width: 767.98px) {
   .hero-title {
     font-size: 2.2rem;
   }
@@ -719,7 +721,7 @@ img {
     font-size: 1rem;
   }
 
-  .hero-section {
+  .hero-content {
     padding: 100px 0 50px 0;
   }
 
@@ -756,26 +758,8 @@ img {
   }
 }
 
-@media (max-width: 576px) {
-  .navbar-brand {
-    position: relative;
-    left: auto;
-    transform: none;
-  }
-
-  .navbar-toggler {
-    position: relative;
-    right: auto;
-    top: auto;
-    transform: none;
-    z-index: auto;
-  }
-
-  .navbar-collapse {
-    margin-top: 0;
-    z-index: auto;
-  }
-
+/* Extra Small */
+@media (max-width: 575.98px) {
   .hero-badge {
     font-size: 12px;
     padding: 6px 18px;
@@ -796,9 +780,5 @@ img {
 
   .contacto-cards {
     grid-template-columns: 1fr;
-  }
-
-  .footer-links {
-    gap: 15px;
   }
 }
