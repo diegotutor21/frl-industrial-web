@@ -365,9 +365,9 @@ img {
 }
 
 /* ========================================
-   PRODUCTOS
+   SOLUCIONES
 ======================================== */
-.producto-card {
+.solucion-card {
   background: var(--blanco);
   border-radius: 12px;
   padding: 25px;
@@ -376,13 +376,11 @@ img {
   transition: all 0.3s ease;
   height: 100%;
 }
-
-.producto-card:hover {
+.solucion-card:hover {
   box-shadow: 0 12px 30px rgba(136, 197, 65, 0.2) !important;
   transform: translateY(-5px);
 }
-
-.producto-img {
+.solucion-img {
   height: 200px;
   display: flex;
   align-items: center;
@@ -390,28 +388,24 @@ img {
   margin-bottom: 20px;
   padding: 15px;
 }
-
-.producto-img img {
+.solucion-img img {
   max-height: 100%;
   max-width: 100%;
   object-fit: contain;
 }
-
-.producto-brand {
+.solucion-brand {
   font-weight: 600;
   font-size: 1.1rem;
   color: var(--gris-frl);
   padding-top: 15px;
   border-top: 2px solid var(--verde-frl);
 }
-
-.producto-card:hover .producto-brand {
+.solucion-card:hover .solucion-brand {
   color: var(--verde-frl);
   transition: color 0.3s ease;
 }
-
 /* CTA Ancho Completo */
-.productos-cta-full {
+.soluciones-cta-full {
   background: linear-gradient(
     135deg,
     var(--verde-frl) 0%,
@@ -422,15 +416,13 @@ img {
   width: 100%;
   margin: 50px 0 0 0;
 }
-
-.productos-cta-full h4 {
+.soluciones-cta-full h4 {
   color: var(--blanco);
   font-size: 2rem;
   margin-bottom: 20px;
   text-align: center;
 }
-
-.productos-cta-full p {
+.soluciones-cta-full p {
   font-size: 1.05rem;
   line-height: 1.8;
   opacity: 0.95;
@@ -440,7 +432,6 @@ img {
   margin-left: auto;
   margin-right: auto;
 }
-
 .cta-highlight {
   background: rgba(255, 255, 255, 0.15);
   padding: 20px 30px;
@@ -450,16 +441,13 @@ img {
   margin: 0 auto;
   display: block;
 }
-
 .cta-highlight i {
   font-size: 1.5rem;
 }
-
 .cta-highlight strong {
   font-size: 1.15rem;
   display: block;
 }
-
 .cta-highlight span {
   font-size: 0.95rem;
   opacity: 0.9;
@@ -733,11 +721,11 @@ img {
     font-size: 1rem;
   }
 
-  .productos-cta {
+  .soluciones-cta {
     padding: 35px 25px;
   }
 
-  .productos-cta h4 {
+  .soluciones-cta h4 {
     font-size: 1.5rem;
   }
 
