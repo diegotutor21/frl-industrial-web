@@ -1,33 +1,17 @@
 // ========================================
 // REFERENCIAS
 // ========================================
-
 const navbar = document.querySelector(".navbar");
+const navbarCollapse = document.querySelector(".navbar-collapse");
 const btnWhatsapp = document.getElementById("btnWhatsapp");
 const btnScrollTop = document.getElementById("btnScrollTop");
-const navbarCollapse = document.querySelector(".navbar-collapse");
-
-let lastScrollTop = 0;
-const scrollThreshold = 100;
 
 // ========================================
-// NAVBAR - Ocultar al bajar, mostrar al subir
+// SCROLL - BOTONES FLOTANTES + CIERRE MENU MOBILE
 // ========================================
-
 window.addEventListener("scroll", () => {
   const currentScroll =
     window.pageYOffset || document.documentElement.scrollTop;
-
-  // Ocultar / mostrar navbar
-  if (currentScroll > scrollThreshold) {
-    if (currentScroll > lastScrollTop) {
-      navbar.classList.add("navbar-hidden");
-    } else {
-      navbar.classList.remove("navbar-hidden");
-    }
-  } else {
-    navbar.classList.remove("navbar-hidden");
-  }
 
   // Botones flotantes
   if (currentScroll > 300) {
@@ -45,14 +29,11 @@ window.addEventListener("scroll", () => {
     });
     bsCollapse.hide();
   }
-
-  lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
 });
 
 // ========================================
 // SCROLL TO TOP
 // ========================================
-
 btnScrollTop?.addEventListener("click", () => {
   window.scrollTo({
     top: 0,
@@ -63,7 +44,6 @@ btnScrollTop?.addEventListener("click", () => {
 // ========================================
 // SMOOTH SCROLL LINKS
 // ========================================
-
 document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
   anchor.addEventListener("click", function (e) {
     const href = this.getAttribute("href");
@@ -72,7 +52,7 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
       e.preventDefault();
 
       const target = document.querySelector(href);
-      const navbarHeight = navbar.offsetHeight;
+      const navbarHeight = navbar ? navbar.offsetHeight : 0;
       const targetPosition = target.offsetTop - navbarHeight - 20;
 
       window.scrollTo({
@@ -80,6 +60,7 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
         behavior: "smooth",
       });
 
+      // Cerrar menú mobile al hacer click
       if (navbarCollapse && navbarCollapse.classList.contains("show")) {
         const bsCollapse = new bootstrap.Collapse(navbarCollapse, {
           toggle: false,
@@ -93,7 +74,6 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
 // ========================================
 // ANIMACIÓN SERVICIOS
 // ========================================
-
 document.addEventListener("DOMContentLoaded", () => {
   const observer = new IntersectionObserver(
     (entries) => {
