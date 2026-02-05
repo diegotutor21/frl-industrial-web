@@ -323,7 +323,7 @@ img {
 }
 
 .servicio-item .ratio img {
-  object-fit: cover;
+  object-fit: contain;
   object-position: center;
   transition: transform 0.3s ease;
 }
@@ -465,22 +465,19 @@ img {
 .marca-card-carousel .ratio img {
   object-fit: contain;
   object-position: center;
+  padding: 15px;
 }
 
 .marca-card-carousel {
   transition: all 0.3s ease;
   opacity: 0.8;
-  padding: 1rem;
+  max-width: 90%;
+  margin: 0 auto;
 }
 
 .marca-card-carousel:hover {
   box-shadow: 0 8px 20px rgba(136, 197, 65, 0.2) !important;
   opacity: 1;
-}
-
-.marca-card-carousel:hover .card-body p {
-  color: var(--verde-frl);
-  transition: color 0.3s ease;
 }
 
 /* ========================================
