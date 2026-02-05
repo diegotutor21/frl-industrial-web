@@ -55,11 +55,15 @@ img {
 }
 
 /* ========================================
-   NAVBAR - SIMPLIFICADO CON BOOTSTRAP
+   NAVBAR 
 ======================================== */
 .navbar {
-  padding: 0.75rem 0;
+  padding: 0.5rem 1rem;
   transition: all 0.3s ease;
+}
+
+.navbar .container {
+  max-width: 90%;
 }
 
 .navbar-hidden {
@@ -67,7 +71,7 @@ img {
 }
 
 .navbar-brand img {
-  height: 55px;
+  height: 60px;
   max-width: 100%;
   object-fit: contain;
   transition: all 0.3s ease;
@@ -116,37 +120,6 @@ img {
 .navbar-light .navbar-nav .nav-link:hover::after,
 .navbar-light .navbar-nav .nav-link.active::after {
   transform: scaleX(1);
-}
-
-@media (max-width: 991.98px) {
-  .navbar-brand img {
-    height: 50px;
-  }
-
-  .navbar-collapse {
-    margin-top: 1rem;
-  }
-
-  .navbar-nav {
-    padding: 0.5rem 0;
-  }
-
-  .navbar-light .navbar-nav .nav-link {
-    padding: 0.75rem 0;
-    text-align: center;
-  }
-
-  .navbar-light .navbar-nav .nav-link::after {
-    left: 50%;
-    right: auto;
-    transform: translateX(-50%) scaleX(0);
-    width: 40px;
-  }
-
-  .navbar-light .navbar-nav .nav-link:hover::after,
-  .navbar-light .navbar-nav .nav-link.active::after {
-    transform: translateX(-50%) scaleX(1);
-  }
 }
 
 /* ========================================
@@ -376,10 +349,12 @@ img {
   transition: all 0.3s ease;
   height: 100%;
 }
+
 .solucion-card:hover {
   box-shadow: 0 12px 30px rgba(136, 197, 65, 0.2) !important;
   transform: translateY(-5px);
 }
+
 .solucion-img {
   height: 200px;
   display: flex;
@@ -388,11 +363,13 @@ img {
   margin-bottom: 20px;
   padding: 15px;
 }
+
 .solucion-img img {
   max-height: 100%;
   max-width: 100%;
   object-fit: contain;
 }
+
 .solucion-brand {
   font-weight: 600;
   font-size: 1.1rem;
@@ -400,11 +377,12 @@ img {
   padding-top: 15px;
   border-top: 2px solid var(--verde-frl);
 }
+
 .solucion-card:hover .solucion-brand {
   color: var(--verde-frl);
   transition: color 0.3s ease;
 }
-/* CTA Ancho Completo */
+
 .soluciones-cta-full {
   background: linear-gradient(
     135deg,
@@ -416,12 +394,14 @@ img {
   width: 100%;
   margin: 50px 0 0 0;
 }
+
 .soluciones-cta-full h4 {
   color: var(--blanco);
   font-size: 2rem;
   margin-bottom: 20px;
   text-align: center;
 }
+
 .soluciones-cta-full p {
   font-size: 1.05rem;
   line-height: 1.8;
@@ -432,6 +412,7 @@ img {
   margin-left: auto;
   margin-right: auto;
 }
+
 .cta-highlight {
   background: rgba(255, 255, 255, 0.15);
   padding: 20px 30px;
@@ -441,13 +422,16 @@ img {
   margin: 0 auto;
   display: block;
 }
+
 .cta-highlight i {
   font-size: 1.5rem;
 }
+
 .cta-highlight strong {
   font-size: 1.15rem;
   display: block;
 }
+
 .cta-highlight span {
   font-size: 0.95rem;
   opacity: 0.9;
@@ -685,11 +669,40 @@ img {
 }
 
 /* ========================================
-   RESPONSIVE - MÍNIMOS AJUSTES
+   RESPONSIVE STYLES
 ======================================== */
 
 /* Tablets */
 @media (max-width: 991.98px) {
+  .navbar-brand img {
+    height: 50px;
+  }
+
+  .navbar-collapse {
+    margin-top: 1rem;
+  }
+
+  .navbar-nav {
+    padding: 0.5rem 0;
+  }
+
+  .navbar-light .navbar-nav .nav-link {
+    padding: 0.75rem 0;
+    text-align: center;
+  }
+
+  .navbar-light .navbar-nav .nav-link::after {
+    left: 50%;
+    right: auto;
+    transform: translateX(-50%) scaleX(0);
+    width: 40px;
+  }
+
+  .navbar-light .navbar-nav .nav-link:hover::after,
+  .navbar-light .navbar-nav .nav-link.active::after {
+    transform: translateX(-50%) scaleX(1);
+  }
+
   .hero-title {
     font-size: 2.8rem;
   }
