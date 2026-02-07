@@ -93,3 +93,8 @@ document.addEventListener("DOMContentLoaded", () => {
     observer.observe(item);
   });
 });
+
+// ========================================
+// AÑO ACTUAL
+// ========================================
+document.getElementById("year").textContent = new Date().getFullYear();
