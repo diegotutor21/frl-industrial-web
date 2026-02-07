@@ -97,4 +97,9 @@ document.addEventListener("DOMContentLoaded", () => {
 // ========================================
 // AÑO ACTUAL
 // ========================================
-document.getElementById("year").textContent = new Date().getFullYear();
+document.addEventListener("DOMContentLoaded", () => {
+  const yearSpan = document.getElementById("year");
+  if (yearSpan) {
+    yearSpan.textContent = new Date().getFullYear();
+  }
+});
