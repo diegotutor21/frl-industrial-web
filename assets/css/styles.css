@@ -2,7 +2,7 @@
    VARIABLES Y COLORES (del logo FRL)
 ======================================== */
 :root {
-  --verde-frl: #88c541;
+  --verde-frl: #6fa832;
   --verde-hover: #6fa832;
   --gris-frl: #4a4a4a;
   --gris-claro: #f8f9fa;
@@ -276,7 +276,7 @@ img {
 
 .section-subtitle {
   font-size: 1.1rem;
-  color: #6c757d;
+  color: #5a5a5a;
   margin: 0;
 }
 
